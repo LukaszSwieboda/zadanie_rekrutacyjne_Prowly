@@ -1,4 +1,4 @@
-import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
+import { Given, When, Then, And } from 'cypress-cucumber-preprocessor/steps'
 
 Given('I open home page', () => {
     cy.visit('https://www.google.com/')
@@ -10,7 +10,19 @@ When('type {string} to search box and press enter', () => {
     
 })
 
+And('Choose the category GRAPHICS', () => {
+    cy.get('a').contains('Grafika').click()
+})
+
 Then('I should see {string} in the graphics results', () => {
-	cy.get('a').contains('Grafika').click()
 	cy.contains('div', 'prowly').should('be.visible')
+})
+
+
+And('Choose the category VIDEO', () => {
+	cy.get('a').contains('Wideo').click()
+})
+
+Then('I should see {string} in the video results', () => {
+	cy.contains('#rcnt', 'prowly').should('be.visible')
 })
