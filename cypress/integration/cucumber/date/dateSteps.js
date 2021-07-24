@@ -13,3 +13,10 @@ Then('I should see info before 2018 about "prowly" in the results', () => {
 	cy.contains('div', 'prowly').should('be.visible')
 })
 
+When('type "prowly after:2018" to search box and press enter', () => {
+	cy.get('input[name="q"]').type('prowly after:2018{enter}')
+})
+
+Then('I should see info after 2018 about "prowly" in the results', () => {
+	cy.contains('div', 'prowly').should('be.visible')
+})
