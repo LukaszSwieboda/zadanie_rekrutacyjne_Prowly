@@ -26,3 +26,11 @@ And('Choose the category VIDEO', () => {
 Then('I should see {string} in the video results', () => {
 	cy.contains('#rcnt', 'prowly').should('be.visible')
 })
+
+And('Choose the category ALL', () => {
+	cy.get('div').contains('Wszystko').click()
+})
+
+Then('I should see {string} in the all results', () => {
+	cy.contains('div', 'prowly').should('be.visible')
+})

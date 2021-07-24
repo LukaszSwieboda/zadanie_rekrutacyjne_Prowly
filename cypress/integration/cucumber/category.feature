@@ -12,3 +12,10 @@ Feature: Search "prowly" on google.com
      When type "prowly" to search box and press enter
      And Choose the category VIDEO
      Then I should see "prowly" in the video results
+
+   
+    Scenario: Search "prowly" on google.com by category ALL
+     Given I open home page
+     When type "prowly" to search box and press enter
+     And Choose the category ALL
+     Then I should see "prowly" in the all results
